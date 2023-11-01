@@ -87,7 +87,7 @@ export default class SaliendoGeocercaReportService{
           return res;
           
         },
-        { concurrency: 1 }
+        { concurrency: 20 }
       ).filter(x => typeof x !== 'undefined');
 
       return result;
