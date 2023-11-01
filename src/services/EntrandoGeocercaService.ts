@@ -6,7 +6,7 @@ import { EstafetaInfo } from "../interfaces/EstafetaInfo";
 import { EntrandoGeocercasInterface } from "../interfaces/EntrandoGeocercaInterface";
 import { DateTime } from "luxon";
   const toDate = DateTime.now().toUTC().toISO();
-  const fromDate = DateTime.now().minus({ minutes: 5 }).toUTC().toISO();
+  const fromDate = DateTime.now().minus({ minutes: 3 }).toUTC().toISO();
 
 
 export default class EntrandoGeocercaReportService{

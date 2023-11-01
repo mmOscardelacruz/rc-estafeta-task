@@ -7,7 +7,7 @@ import { VelocidaMayor80Interface } from "../interfaces/VelocidadMayor80Interfac
 import { VelocidadMayor120Interface } from "../interfaces/VelocidadMayor120Interface";
 import { DateTime } from "luxon";
 const toDate = DateTime.now().toUTC().toISO();
-  const fromDate = DateTime.now().minus({ minutes: 5 }).toUTC().toISO();
+  const fromDate = DateTime.now().minus({ minutes: 3 }).toUTC().toISO();
 
 export default class VelocidadMayor120ReportService{
 
