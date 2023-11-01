@@ -1,0 +1,9 @@
+'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"\nxmlns:tem="http://tempuri.org/">
+\n<soapenv:Header/>
+\n<soapenv:Body>
+\n<tem:GetUserToken>
+\n<tem:userId>user_avl_TTestafeta</tem:userId>
+\n<tem:password>SYmn*812cPIL_2</tem:password>
+\n</tem:GetUserToken>
+\n</soapenv:Body>
+\n</soapenv:Envelope>';

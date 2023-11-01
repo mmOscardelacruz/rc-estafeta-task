@@ -1,0 +1,6 @@
+"<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">
+<s:Body><GetUserTokenResponse xmlns=\"http://tempuri.org/\">
+<GetUserTokenResult xmlns:a=\"http://schemas.datacontract.org/2004/07/IronTracking\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">
+<a:exception i:nil=\"true\" xmlns:b=\"http://schemas.microsoft.com/2003/10/Serialization/Arrays\"/>
+<a:token>2ed625d8-f74b-34f5-51ad-b2ff0b5da53f</a:token></GetUserTokenResult>
+</GetUserTokenResponse></s:Body></s:Envelope>"
