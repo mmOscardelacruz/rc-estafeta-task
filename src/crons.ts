@@ -54,41 +54,41 @@ export const velocidadMayor120ReportCron = new CronJob(
   }
 );
 
-// export const entrandoGeocercaReportCron = new CronJob(
-//   cronExpression,
-//   async () => {
-//     try {
-//       console.log('Running Entrando Geocerca Cron');
-//       await entrandoGeocercaController();
-//     } catch (error) {
-//       console.log(error);
-//       entrandoGeocercaReportCron.stop();
-//     }
-//   }
-// );
-
-// export const saliendoGeocercaReportCron = new CronJob(
-//   cronExpression,
-//   async () => {
-//     try {
-//       console.log('Running Saliendo Geocerca Cron');
-//       await saliendoGeocercaController();
-//     } catch (error) {
-//       console.log(error);
-//       saliendoGeocercaReportCron.stop();
-//     }
-//   }
-// );
-
-export const speedLockReportCron = new CronJob(
+export const entrandoGeocercaReportCron = new CronJob(
   cronExpression,
   async () => {
     try {
-      console.log('Running Speed Lock Cron');
-      await speedLockController();
+      console.log('Running Entrando Geocerca Cron');
+      await entrandoGeocercaController();
     } catch (error) {
       console.log(error);
-      speedLockReportCron.stop();
+      entrandoGeocercaReportCron.stop();
     }
   }
 );
+
+export const saliendoGeocercaReportCron = new CronJob(
+  cronExpression,
+  async () => {
+    try {
+      console.log('Running Saliendo Geocerca Cron');
+      await saliendoGeocercaController();
+    } catch (error) {
+      console.log(error);
+      saliendoGeocercaReportCron.stop();
+    }
+  }
+);
+
+// export const speedLockReportCron = new CronJob(
+//   cronExpression,
+//   async () => {
+//     try {
+//       console.log('Running Speed Lock Cron');
+//       await speedLockController();
+//     } catch (error) {
+//       console.log(error);
+//       speedLockReportCron.stop();
+//     }
+//   }
+// );
