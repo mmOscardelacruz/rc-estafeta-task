@@ -8,6 +8,7 @@ import EntrandoGeocercaReportService from './services/EntrandoGeocercaService';
 import SpeedLockReportService from './services/SpeedLockService';
 import SaliendoGeocercaReportService from './services/SaliendoGeocercaService';
 import { DateTime } from "luxon";
+import PosicionamientoService from './services/PosicionamientoService';
 
 const toDate = DateTime.now().toUTC().toISO();
 const fromDate = DateTime.now().minus({ minutes: 5 }).toUTC().toISO();
@@ -87,4 +88,16 @@ export const speedLockController = async () => {
   const speedLockService = new SpeedLockReportService(geotabService);
   const reportEvents = await speedLockService.getData();
   await estafetaService.sendSpeedLock(reportEvents);
+};
+
+export const posicionamientoController = async () => {
+  const estafetaService = new EstafetaService();
+
+  const { goDatabase, goPassword, goServer, goUsername } = config.geotab;
+
+  const geotabService = new GeotabService(goUsername, goPassword, goDatabase, goServer);
+
+  const posicionamientoService = new PosicionamientoService(geotabService);
+  const reportEvents = await posicionamientoService.getData();
+  await estafetaService.sendPosicionamiento(reportEvents);
 };

@@ -30,6 +30,14 @@ const config = {
     estafetaUrl: process.env.ESTAFETA_URL ?? '',
     estafetaUser: process.env.ESTAFETA_USER ?? '',
     estafetaPassword: process.env.ESTAFETA_PASSWORD ?? '',
+  },
+  sendMail: {
+    mailTime: process.env.TIME_EMAILS ?? 15,
+    mailService: process.env.EMAIL_SERVICE ?? 'gmail',
+    mailTo: process.env.EMAIL_TO ?? '',
+    mailFrom: process.env.EMAIL_METRICA ?? '',
+    mailPassword: process.env.EMAILPASS_METRICA ?? '',
+    mailOfsset: process.env.OFFSET ?? -6,
   }
 };
 

@@ -5,8 +5,8 @@ import { GetAddressInterface } from "../interfaces/Geotab/GetAddressInterface";
 import { EstafetaInfo } from "../interfaces/EstafetaInfo";
 import { SaliendoGeocercaInterface } from "../interfaces/SaliendoGeocercaInterface";
 import { DateTime } from "luxon";
-  const toDate = DateTime.now().toUTC().toISO();
-  const fromDate = DateTime.now().minus({ minutes: 3 }).toUTC().toISO();
+const toDate = DateTime.now().setZone('America/Mexico_City').toUTC().toISO();
+const fromDate = DateTime.now().setZone('America/Mexico_City').minus({ minutes: 3 }).toUTC().toISO();
 
 
 export default class SaliendoGeocercaReportService{

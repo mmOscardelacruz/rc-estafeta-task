@@ -2,6 +2,7 @@ import { CronJob } from 'cron';
 
 import { botonPanicoController,
          entrandoGeocercaController,
+         posicionamientoController,
          saliendoGeocercaController, 
          speedLockController, 
          velocidadMayor120Controller, 
@@ -11,6 +12,22 @@ import config from './config';
 
 const { cronExpression } = config.cron;
 const { timeZone } = config;
+
+export const posicionamientoReportCron = new CronJob(
+  cronExpression,
+  async () => {
+    try {
+      console.log('Running posicionamiento Cron');
+      await posicionamientoController();
+    } catch (error) {
+      console.log(error);
+      posicionamientoReportCron.stop();
+    }
+  },
+  () => console.log('Posicionamiento Cron Stopped'),
+  true,
+  timeZone,
+);
 
 export const botonPanicoReportCron = new CronJob(
   cronExpression,
@@ -80,15 +97,15 @@ export const saliendoGeocercaReportCron = new CronJob(
   }
 );
 
-// export const speedLockReportCron = new CronJob(
-//   cronExpression,
-//   async () => {
-//     try {
-//       console.log('Running Speed Lock Cron');
-//       await speedLockController();
-//     } catch (error) {
-//       console.log(error);
-//       speedLockReportCron.stop();
-//     }
-//   }
-// );
+export const speedLockReportCron = new CronJob(
+  cronExpression,
+  async () => {
+    try {
+      console.log('Running Speed Lock Cron');
+      await speedLockController();
+    } catch (error) {
+      console.log(error);
+      speedLockReportCron.stop();
+    }
+  }
+);

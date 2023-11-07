@@ -77,6 +77,28 @@ class GeotabService {
     }
   }
 
+
+  async getDeviceStatusInfoParams(fromDate?:string,toDate?:string,deviceId?:string): Promise<DeviceStatusInfo[]> {
+    try {
+      const api = await this.getApi();
+      const devices: DeviceStatusInfo[] = await api.call('Get', {
+        typeName: 'DeviceStatusInfo',
+        search: {
+          fromDate,
+          toDate,
+          deviceSearch: {
+            id: deviceId
+          }
+        }
+      });
+
+      return devices;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
   async getStatusData(fromDate: string, toDate: string, diagnosticId: string, deviceId: string): Promise<StatusData[]> {
     try {
       const api = await this.getApi();

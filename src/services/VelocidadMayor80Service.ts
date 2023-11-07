@@ -6,8 +6,8 @@ import { EstafetaInfo } from "../interfaces/EstafetaInfo";
 import { DateTime } from "luxon";
 import { VelocidaMayor80Interface } from "../interfaces/VelocidadMayor80Interface";
 
-  const toDate = DateTime.now().toUTC().toISO();
-  const fromDate = DateTime.now().minus({ minutes: 3 }).toUTC().toISO();
+  const toDate = DateTime.now().setZone('America/Mexico_City').toUTC().toISO();
+  const fromDate = DateTime.now().setZone('America/Mexico_City').minus({ minutes: 3 }).toUTC().toISO();
 
 
 
